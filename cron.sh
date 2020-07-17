@@ -8,7 +8,7 @@ crontab /etc/cron.d/docker_cron
 
 # carry over environment
 (env | grep -v PWD | sed 's/^\(.*\)/export \1/g') > /env.sh
-cat env.sh
+cat /env.sh
 
 echo "Starting cron"
 touch /var/log/cron.log
