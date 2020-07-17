@@ -1,0 +1,11 @@
+FROM ubuntu:20.04
+
+RUN apt-get update \
+    && apt-get install -y cron \
+    && apt-get clean
+
+ENV CRON_BINARY=cron
+COPY cron.sh /cron.sh
+
+CMD ["/cron.sh"]
+

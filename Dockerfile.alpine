@@ -2,6 +2,7 @@ FROM alpine:3.12
 
 RUN apk add dcron
 
+ENV CRON_BINARY=crond
 COPY cron.sh /cron.sh
 
 CMD ["/cron.sh"]

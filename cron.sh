@@ -13,4 +13,4 @@ cat env.sh
 echo "Starting cron"
 touch /var/log/cron.log
 tail -f /var/log/cron.log &
-crond -f
+$CRON_BINARY -f

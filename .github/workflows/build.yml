@@ -20,6 +20,16 @@ jobs:
           repository: paulgessinger/cron
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerfile: Dockerfile.alpine
           tags: alpine
+          tag_with_ref: true
+          add_git_labels: true
+      - uses: docker/build-push-action@v1
+        with:
+          repository: paulgessinger/cron
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          dockerfile: Dockerfile.ubuntu
+          tags: ubuntu
           tag_with_ref: true
           add_git_labels: true
